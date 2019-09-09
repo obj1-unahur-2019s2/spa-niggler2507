@@ -1,5 +1,19 @@
 
 object olivia {
+	var string = "Olivia"
+	var gradoConcentracion = 6
+	
+	method nombre() { return string }
+	method gradoConcentracion() {
+		return gradoConcentracion
+	}
+	method recibirMasaje() {
+		gradoConcentracion += 3
+	}
+	method discute() {
+		gradoConcentracion -= 1
+	}
+	method darseUnBanioDeVapor() { }
 }
 
 
@@ -22,19 +36,32 @@ object bruno {
 	method estaPerfecto() { return self.esFeliz() and not self.tieneSed() and self.peso().between(50000, 70000) }
 	method mediodiaEnCasa() { 
 		self.comerFideos()
-		// y que mas?
+		
 	}
 }
 
 object ramiro {
-	method recibirMasajes() { /*... completar ...*/ }
-	method darseUnBanioDeVapor() { /*... completar ...*/ }
-	method comerseUnBigMac() { /*... completar ...*/ }
-	method bajarALaFosa() { /*... completar ...*/ }
-	method jugarAlPaddle() { /*... completar ...*/ }
+		var contractura = 0
+		var pielGrasosa = false
+	method recibirMasajes() { 
+		if (contractura > 1) {
+			contractura = contractura - 2
+		}else {
+			contractura = 0
+		}
+	}
+	method darseUnBanioDeVapor() { pielGrasosa = false }
+	method comerseUnBigMac() { pielGrasosa = true }
+	method bajarALaFosa() { 
+		pielGrasosa = true
+		contractura = contractura + 1
+	}
+	method jugarAlPaddle() { contractura = contractura + 3 }
 	
 	method diaDeTrabajo() { 
-		/*... completar ...*/
+		self.bajarALaFosa()
+		self.comerseUnBigMac()
+		self.bajarALaFosa()
 	}
 }
 
